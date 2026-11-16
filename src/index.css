@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+
+  /* Paleta: agua, venecitas y sol de patio */
+  --color-lavada: #dcebed;
+  --color-espuma: #f8fcfc;
+  --color-profunda: #062b3a;
+  --color-venecita: #0b6e99;
+  --color-cristal: #2fc4d0;
+  --color-sol: #ffd23f;
+
+  --radius-panel: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+body {
+  background: var(--color-lavada);
+  color: var(--color-profunda);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-sol);
+  color: var(--color-profunda);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cristal);
+  outline-offset: 3px;
+}
+
+/* Mosaico de venecitas: se usa como fondo/fallback de imágenes */
+.venecitas {
+  background-color: #0b6e99;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+    radial-gradient(120% 90% at 20% 10%, #2fc4d0 0%, #0b6e99 55%, #062b3a 100%);
+  background-size: 22px 22px, 22px 22px, 100% 100%;
+}
+
+/* Texto con brillo (estilo ShinyText) */
+.shiny {
+  background: linear-gradient(110deg, rgba(248, 252, 252, 0.6) 35%, #ffffff 50%, rgba(248, 252, 252, 0.6) 65%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 3.4s linear infinite;
+}
+@keyframes shine {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .shiny {
+    animation: none;
+    background: none;
+    color: inherit;
+  }
+}
