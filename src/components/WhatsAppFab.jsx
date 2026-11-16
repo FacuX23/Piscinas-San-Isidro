@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
-import { MessageCircle } from 'lucide-react'
+import { IconBrandWhatsapp } from '@tabler/icons-react'
 import { waLink } from '../data/site'
 
 export default function WhatsAppFab() {
@@ -24,7 +24,7 @@ export default function WhatsAppFab() {
           transition={{ type: 'spring', stiffness: 360, damping: 20 }}
           className="fixed right-5 bottom-5 z-40 grid size-14 place-items-center rounded-full bg-[#25d366] text-white shadow-[0_10px_30px_rgba(6,43,58,0.35)] md:right-8 md:bottom-8"
         >
-          <MessageCircle className="size-7" />
+          <IconBrandWhatsapp className="size-8" stroke={1.8} />
         </motion.a>
       )}
     </AnimatePresence>

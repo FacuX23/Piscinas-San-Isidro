@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { CheckCircle2, Clock, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react'
+import { CheckCircle2, Clock, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { IconBrandWhatsapp } from '@tabler/icons-react'
 import Panel from '../components/Panel'
 import SplitText from '../components/SplitText'
 import { SERVICE_OPTIONS, SITE, waLink } from '../data/site'
@@ -50,14 +51,15 @@ export default function Contact() {
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between gap-4 rounded-panel bg-sol p-6 text-profunda transition-transform hover:-translate-y-0.5 md:p-8"
+            className="group flex items-center justify-between gap-4 rounded-panel bg-sol p-6 text-profunda transition-transform duration-300 will-change-transform [backface-visibility:hidden] hover:-translate-y-0.5 md:p-8"
           >
             <span>
               <span className="block text-2xl font-semibold tracking-tight md:text-3xl">Escribinos por WhatsApp</span>
               <span className="mt-1 block text-profunda/70">{SITE.whatsappLabel}</span>
             </span>
-            <span className="grid size-14 shrink-0 place-items-center rounded-full bg-profunda text-sol transition-transform group-hover:rotate-12">
-              <MessageCircle className="size-7" />
+            {/* will-change + backface: la capa queda fija en GPU, así al terminar el hover no se re-rasteriza y el ícono no "salta" */}
+            <span className="grid size-14 shrink-0 place-items-center rounded-full bg-profunda text-sol transition-transform duration-300 will-change-transform [backface-visibility:hidden] group-hover:rotate-12">
+              <IconBrandWhatsapp className="size-8" stroke={1.8} />
             </span>
           </a>
 

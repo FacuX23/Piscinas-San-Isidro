@@ -8,9 +8,9 @@ export const SITE = {
   name: 'San Isidro Piscinas',
   whatsapp: '5491155550123', // formato internacional, sin + ni espacios
   whatsappLabel: '+54 9 11 5555-0123',
-  phone: '+541155550123',
-  phoneLabel: '+54 11 5555-0123',
-  email: 'hola@sanisidropiscinas.com.ar',
+  phone: '+5412345678910',
+  phoneLabel: '+54 12 3456-7890',
+  email: 'hola@correo-contacto.com.ar',
   address: 'Av. Centenario 1234, San Isidro, Buenos Aires',
   hours: ['Lunes a viernes de 9 a 18', 'Sábados de 9 a 13'],
   mapQuery: 'San Isidro, Buenos Aires, Argentina',
