@@ -74,7 +74,14 @@ export default function Services() {
 
         {/* Mantenimiento */}
         <motion.div {...enter(1)} className="md:col-span-5">
-          <SpotlightCard className="h-full rounded-panel bg-profunda p-6 text-espuma md:p-8">
+          <SpotlightCard className="group/card h-full rounded-panel bg-profunda p-6 text-espuma md:p-8">
+            {/* Foto de fondo: la card mantiene su tamaño original (lo define el texto) */}
+            <Img
+              src={photos.mantenimiento}
+              alt="Pileta limpia con barrefondo, sacahojas y kit de control del agua"
+              className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] group-hover/card:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-profunda via-profunda/75 to-profunda/30" />
             <div className="relative">
               <Droplets className="mb-4 size-8 text-cristal" strokeWidth={1.6} />
               <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">Mantenimiento</h3>

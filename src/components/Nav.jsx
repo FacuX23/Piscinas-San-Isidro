@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
 import { Droplet, Menu, X } from 'lucide-react'
 import { NAV_LINKS } from '../data/site'
@@ -32,6 +32,25 @@ export default function Nav() {
     return () => io.disconnect()
   }, [])
 
+  // Posición/tamaño del link activo (relativo a la lista) para el indicador deslizante.
+  // Se usa offsetLeft/offsetWidth: no los afectan los transforms del header al esconderse.
+  const listRef = useRef(null)
+  const linkRefs = useRef({})
+  const [pill, setPill] = useState(null)
+  useLayoutEffect(() => {
+    const measure = () => {
+      const el = linkRefs.current[active]
+      if (!el || !el.offsetWidth) return // sin link activo o lista oculta (mobile): queda donde estaba
+      const li = el.parentElement
+      setPill({ x: li.offsetLeft + el.offsetLeft, y: li.offsetTop + el.offsetTop, w: el.offsetWidth, h: el.offsetHeight })
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    if (listRef.current) ro.observe(listRef.current)
+    document.fonts?.ready.then(measure)
+    return () => ro.disconnect()
+  }, [active])
+
   // Bloquea el scroll cuando el menú mobile está abierto
   useEffect(() => {
     if (open) window.__lenis?.stop()
@@ -64,14 +83,35 @@ export default function Nav() {
             </span>
           </a>
 
-          <ul className="hidden items-center gap-1 md:flex">
+          <ul ref={listRef} className="relative hidden items-center gap-1 md:flex">
+            {/* Indicador único que se desliza hasta el link activo.
+                Se monta recién con la primera posición medida (initial={false}: aparece en su lugar,
+                sin barrer desde la izquierda). Fuera de las secciones del menú se desvanece donde estaba. */}
+            {pill && (
+              <motion.span
+                aria-hidden="true"
+                className="pointer-events-none absolute top-0 left-0 rounded-full bg-white/15"
+                initial={false}
+                animate={{ x: pill.x, y: pill.y, width: pill.w, height: pill.h, opacity: active ? 1 : 0 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 380,
+                  damping: 34,
+                  mass: 0.8,
+                  opacity: { duration: 0.25 },
+                }}
+              />
+            )}
             {NAV_LINKS.map((l) => {
-              const on = active === l.href.slice(1)
+              const id = l.href.slice(1)
+              const on = active === id
               return (
-                <li key={l.href}>
+                <li key={l.href} className="relative">
                   <a
+                    ref={(el) => (linkRefs.current[id] = el)}
                     href={l.href}
-                    className={`rounded-full px-3.5 py-2 text-sm transition-colors ${on ? 'bg-white/15 text-white' : 'text-espuma/75 hover:text-white'}`}
+                    aria-current={on ? 'location' : undefined}
+                    className={`relative block rounded-full px-3.5 py-2 text-sm transition-colors duration-300 ${on ? 'text-white' : 'text-espuma/75 hover:text-white'}`}
                   >
                     {l.label}
                   </a>

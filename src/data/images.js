@@ -4,7 +4,11 @@
 
 const unsplash = (id, w = 1600) => `https://unsplash.com/photos/${id}/download?w=${w}`
 
+// Fotos propias (Vite las procesa y les pone hash al compilar)
+import mantenimiento from './servicios_piscina.png'
+
 export const photos = {
+  mantenimiento,
   rectangular: unsplash('SWfvM4yJfWM'),
   building: unsplash('K76E3nttJFE'),
   loungers: unsplash('XUq_ltx7GEg'),
