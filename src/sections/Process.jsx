@@ -3,7 +3,9 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { Box, Droplets, HardHat, Ruler } from 'lucide-react'
 import Panel from '../components/Panel'
 import SplitText from '../components/SplitText'
+import Img from '../components/Img'
 import { PROCESS } from '../data/site'
+import { photos } from '../data/images'
 
 const ICONS = { Ruler, Box, HardHat, Droplets }
 
@@ -26,11 +28,13 @@ function StepCard({ step, index, total, progress, reduce }) {
             <p className="mt-3 max-w-md text-base leading-relaxed text-profunda/70 md:text-lg">{step.text}</p>
           </div>
         </div>
-        <div className="venecitas relative grid min-h-48 place-items-center overflow-clip">
-          <span className="absolute size-56 rounded-full border border-white/25 md:size-80" />
-          <span className="absolute size-36 rounded-full border border-white/30 md:size-52" />
-          <span className="relative grid size-24 place-items-center rounded-full bg-white/15 text-sol backdrop-blur-md md:size-28">
-            <Icon className="size-10 md:size-12" strokeWidth={1.5} />
+        <div className="relative aspect-[3/2] overflow-clip bg-profunda md:aspect-auto md:h-full">
+          <Img src={photos[step.photo]} alt={step.alt} className="absolute inset-0 size-full object-cover" />
+          <span
+            aria-hidden="true"
+            className="absolute top-4 right-4 grid size-11 place-items-center rounded-full border border-white/20 bg-profunda/65 text-sol backdrop-blur-md"
+          >
+            <Icon className="size-5" strokeWidth={1.75} />
           </span>
         </div>
       </motion.article>

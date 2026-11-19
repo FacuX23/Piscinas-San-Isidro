@@ -21,6 +21,8 @@ export default function Nav() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) setActive(e.target.id)
+          // Al salir de la sección activa sin entrar en otra (p. ej. volviendo al hero), se limpia
+          else setActive((cur) => (cur === e.target.id ? '' : cur))
         })
       },
       { rootMargin: '-40% 0px -50% 0px' },

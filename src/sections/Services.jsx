@@ -49,11 +49,11 @@ export default function Services() {
         <motion.div {...enter(0)} className="md:col-span-7 md:row-span-2">
           <SpotlightCard className="group/card relative flex min-h-[26rem] flex-col justify-end rounded-panel bg-profunda p-6 text-espuma md:h-full md:p-8">
             <Img
-              src={photos.loungers}
-              alt="Pileta de hormigón con reposeras"
+              src={photos.construccion}
+              alt="Pileta de hormigón proyectado con venecitas azules, borde atérmico y reposeras"
               className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] group-hover/card:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-profunda via-profunda/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-profunda via-profunda/45 to-transparent" />
             <div className="relative">
               <Hammer className="mb-4 size-8 text-sol" strokeWidth={1.6} />
               <h3 className="text-3xl font-semibold tracking-tight md:text-4xl">Construcción</h3>
@@ -100,7 +100,13 @@ export default function Services() {
 
         {/* Reformas */}
         <motion.div {...enter(2)} className="md:col-span-5">
-          <SpotlightCard className="venecitas h-full rounded-panel p-6 text-espuma md:p-8" color="rgba(255,210,63,0.22)">
+          <SpotlightCard className="group/card h-full rounded-panel bg-profunda p-6 text-espuma md:p-8" color="rgba(255,210,63,0.22)">
+            <Img
+              src={photos.reformas}
+              alt="Pileta renovada con revestimiento de venecitas azules, borde atérmico nuevo e iluminación LED"
+              className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] group-hover/card:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-profunda via-profunda/75 to-profunda/30" />
             <div className="relative">
               <Layers className="mb-4 size-8 text-sol" strokeWidth={1.6} />
               <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">Reformas</h3>

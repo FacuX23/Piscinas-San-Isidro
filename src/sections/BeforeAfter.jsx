@@ -5,11 +5,11 @@ import Panel from '../components/Panel'
 import SplitText from '../components/SplitText'
 import Img from '../components/Img'
 import { photos } from '../data/images'
+import piscinaBefore from '../data/piscina-before.png'
 
-// Comparador antes / después. El "antes" es una simulación con filtros CSS sobre la misma foto.
-// Cuando el cliente tenga fotos reales, reemplazar BEFORE y AFTER por dos imágenes distintas.
+// Comparador antes / después.
 const AFTER = photos.house
-const BEFORE = photos.house
+const BEFORE = piscinaBefore
 
 export default function BeforeAfter() {
   const wrap = useRef(null)
@@ -80,10 +80,9 @@ export default function BeforeAfter() {
             <Img
               src={BEFORE}
               alt="Pileta antes de la reforma"
-              className="absolute inset-0 size-full object-cover [filter:grayscale(0.8)_sepia(0.35)_hue-rotate(35deg)_brightness(0.75)_contrast(0.9)]"
+              className="absolute inset-0 size-full object-cover"
               draggable={false}
             />
-            <div className="absolute inset-0 bg-[#3d5a2a]/25" />
           </div>
 
           <span className="pointer-events-none absolute top-4 left-4 rounded-full bg-profunda/70 px-3.5 py-1.5 text-sm backdrop-blur-md">Antes</span>

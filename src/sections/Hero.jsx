@@ -5,7 +5,7 @@ import CausticsCanvas from '../components/CausticsCanvas'
 import SplitText from '../components/SplitText'
 import Magnet from '../components/Magnet'
 
-const CHIPS = ['Desde 1995', '450+ piletas', 'Garantía de 10 años']
+const CHIPS = ['+45 años de experincia', '+450 piletas', 'Garantía de 10 años']
 
 export default function Hero() {
   const ref = useRef(null)
@@ -54,7 +54,7 @@ export default function Hero() {
                 href="#contacto"
                 className="inline-flex items-center gap-2 rounded-full bg-sol px-7 py-4 text-base font-semibold text-profunda transition-colors hover:bg-white"
               >
-                Pedir presupuesto
+                Solicitar presupuesto
                 <ArrowUpRight className="size-5" />
               </a>
             </Magnet>

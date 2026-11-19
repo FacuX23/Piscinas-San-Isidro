@@ -23,10 +23,10 @@ export const waLink = (text = 'Hola, quiero pedir un presupuesto para una pileta
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`
 
 export const NAV_LINKS = [
+  { href: '#nosotros', label: 'Nosotros' },
   { href: '#servicios', label: 'Servicios' },
   { href: '#proceso', label: 'Cómo trabajamos' },
   { href: '#proyectos', label: 'Proyectos' },
-  { href: '#nosotros', label: 'Nosotros' },
   { href: '#contacto', label: 'Contacto' },
 ]
 
@@ -45,21 +45,29 @@ export const MARQUEE_ITEMS = [
 export const PROCESS = [
   {
     icon: 'Ruler',
+    photo: 'procesoVisita',
+    alt: 'Planos de pileta, medidor láser y muestras de venecitas y travertino sobre mesa de patio frente al jardín',
     title: 'Visita y medición',
     text: 'Vamos a tu casa, medimos el terreno, revisamos el suelo y charlamos cómo querés usar la pileta. Después te pasamos un presupuesto cerrado, por escrito.',
   },
   {
     icon: 'Box',
+    photo: 'procesoDiseno3d',
+    alt: 'Plano isométrico 3D de pileta con corte estructural que muestra profundidad, escalones sumergidos, playa húmeda y solárium',
     title: 'Diseño en 3D',
     text: 'Ves tu pileta en tu patio antes de poner el primer ladrillo. Ajustamos forma, profundidad, escalones y solárium hasta que quedes conforme.',
   },
   {
     icon: 'HardHat',
+    photo: 'procesoObra',
+    alt: 'Estructura de hormigón proyectado con armadura de hierro y encofrado prolijo en obra residencial',
     title: 'Obra',
     text: 'Excavación, estructura, instalaciones y revestimiento con equipo propio. Un encargado de obra fijo y avances semanales por WhatsApp.',
   },
   {
     icon: 'Droplets',
+    photo: 'procesoEntrega',
+    alt: 'Pileta terminada con agua cristalina, escalones sumergidos y kit de control del agua en el solárium',
     title: 'Entrega y puesta en marcha',
     text: 'Llenado, tratamiento inicial del agua y una charla para que sepas cómo cuidarla. Garantía por escrito y, si querés, seguimos con el mantenimiento.',
   },
@@ -69,9 +77,9 @@ export const PROCESS = [
 export const PROJECTS = [
   { title: 'Residencia Barrancas', place: 'San Isidro', type: 'residencial', size: '9 × 4 m', detail: 'Hormigón proyectado', year: 2025, photo: 'rectangular' },
   { title: 'Club de campo Los Talas', place: 'Pilar', type: 'comercial', size: '25 × 12 m', detail: 'Semiolímpica climatizada', year: 2024, photo: 'building' },
-  { title: 'Quinta del Delta', place: 'Tigre', type: 'residencial', size: '8 × 3,5 m', detail: 'Venecitas azules', year: 2025, photo: 'loungers' },
+  { title: 'Quinta del Delta', place: 'Tigre', type: 'residencial', size: '8 × 3,5 m', detail: 'Venecitas azules', year: 2025, photo: 'delta' },
   { title: 'Casa en Cardales', place: 'Campana', type: 'residencial', size: '10 × 4,5 m', detail: 'Borde infinito', year: 2024, photo: 'twoChairs' },
-  { title: 'Hotel boutique', place: 'Pinamar', type: 'comercial', size: '15 × 7 m', detail: 'Con solárium y palmeras', year: 2023, photo: 'palms' },
+  { title: 'Hotel boutique', place: 'Pinamar', type: 'comercial', size: '15 × 7 m', detail: 'Con solárium y palmeras', year: 2023, photo: 'hotel' },
   { title: 'Chalet La Lonja', place: 'Funes', type: 'residencial', size: '7 × 3 m', detail: 'Fibra de vidrio', year: 2025, photo: 'woodHouse' },
 ]
 

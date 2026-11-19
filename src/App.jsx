@@ -23,11 +23,11 @@ export default function App() {
       <main className="flex flex-col gap-3 p-3">
         <Hero />
         <Marquee items={MARQUEE_ITEMS} />
+        <About />
         <Services />
         <Process />
         <Projects />
         <BeforeAfter />
-        <About />
         <Testimonials />
         <Faq />
         <Contact />
