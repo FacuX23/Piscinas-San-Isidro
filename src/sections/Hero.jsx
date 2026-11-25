@@ -43,7 +43,7 @@ export default function Hero() {
             transition={{ delay: 0.9, duration: 0.8 }}
             className="max-w-lg text-lg leading-relaxed text-espuma/85 md:text-xl"
           >
-            Diseñamos, construimos y mantenemos piletas en zona norte. Presupuesto por escrito, equipo propio y garantía de 10 años.
+            Diseñamos, construimos y mantenemos piletas en zona norte. Presupuesto por escrito, equipo propio y garantía de 3 años.
           </motion.p>
 
           <motion.div

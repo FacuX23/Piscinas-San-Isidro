@@ -61,7 +61,7 @@ export default function Services() {
                 Piletas a medida de hormigón proyectado, fibra de vidrio o revestidas con venecitas. Diseñadas para tu terreno y tu forma de vivir el patio.
               </p>
               <ul className="mt-5 flex flex-wrap gap-2">
-                {['Diseño 3D', 'Hormigón proyectado', 'Venecitas', 'Garantía de 10 años'].map((t) => (
+                {['Diseño 3D', 'Hormigón proyectado', 'Venecitas', 'Garantía de 3 años'].map((t) => (
                   <Chip key={t}>{t}</Chip>
                 ))}
               </ul>

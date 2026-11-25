@@ -87,7 +87,7 @@ export const STATS = [
   { to: 30, suffix: '+', label: 'años haciendo piletas', note: 'desde 1995' },
   { to: 450, suffix: '+', label: 'piletas construidas' },
   { to: 1200, suffix: '+', label: 'clientes de mantenimiento' },
-  { to: 10, suffix: ' años', label: 'de garantía estructural' },
+  { to: 3, suffix: ' años', label: 'de garantía estructural' },
 ]
 
 export const VALUES = [
