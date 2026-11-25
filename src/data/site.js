@@ -137,7 +137,7 @@ export const FAQS = [
   },
   {
     q: '¿Qué cubre la garantía?',
-    a: 'La garantía de 10 años cubre la estructura de la pileta. Los equipos tienen la garantía de su fabricante. Todo queda detallado en el contrato.',
+    a: 'La garantía de 3 años cubre la estructura de la pileta. Los equipos tienen la garantía de su fabricante. Todo queda detallado en el contrato.',
   },
   {
     q: '¿Hacen mantenimiento de piletas que no construyeron?',
