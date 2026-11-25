@@ -135,7 +135,7 @@ export default function Services() {
                   <CardLink />
                 </div>
               </div>
-              <ul className="grid grid-cols-2 gap-3 md:grid-cols-3">
+              <ul className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3">
                 {[
                   [Wrench, 'Bombas y filtros'],
                   [Shield, 'Cloración salina'],
@@ -144,9 +144,12 @@ export default function Services() {
                   [Lightbulb, 'Iluminación LED'],
                   [Settings2, 'Automatización'],
                 ].map(([Icon, label]) => (
-                  <li key={label} className="flex items-center gap-3 rounded-2xl bg-espuma px-4 py-3.5 text-sm font-medium md:text-base">
-                    <Icon className="size-5 shrink-0 text-venecita" strokeWidth={1.8} />
-                    {label}
+                  <li
+                    key={label}
+                    className="flex min-w-0 items-center gap-2 rounded-2xl bg-espuma px-3 py-3.5 text-[13px] leading-tight font-medium sm:gap-3 sm:px-4 sm:text-sm md:text-base"
+                  >
+                    <Icon className="size-4 shrink-0 text-venecita sm:size-5" strokeWidth={1.8} />
+                    <span lang="es" className="min-w-0 break-words [hyphens:auto]">{label}</span>
                   </li>
                 ))}
               </ul>
