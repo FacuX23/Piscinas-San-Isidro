@@ -94,9 +94,9 @@ void main() {
   c = 1.17 - pow(c, 1.4);
   float k = min(1.0, pow(abs(c), 8.0));
 
-  // degradé base: profundo arriba, azul venecita abajo
-  vec3 base = vec3(6.0 + uv.y * 8.0, 43.0 + uv.y * 52.0, 58.0 + uv.y * 78.0) / 255.0;
-  vec3 col = base + k * vec3(150.0, 215.0, 200.0) / 255.0;
+  // degradé base turquesa vívido: profundo arriba, turquesa luminoso abajo
+  vec3 base = vec3(4.0 + uv.y * 12.0, 68.0 + uv.y * 85.0, 82.0 + uv.y * 95.0) / 255.0;
+  vec3 col = base + k * vec3(95.0, 245.0, 235.0) / 255.0;
 
   // luz sobre la superficie: pendientes iluminadas u oscuras, reflejo especular, espuma y destello
   vec3 nrm = normalize(vec3(-grad * 0.0105, 1.0));
@@ -284,9 +284,9 @@ function createCPU(canvas, small) {
 
       for (let y = 0; y < h; y++) {
         const vy = y / h
-        const br = 6 + vy * 8
-        const bg = 43 + vy * 52
-        const bb = 58 + vy * 78
+        const br = 4 + vy * 12
+        const bg = 68 + vy * 85
+        const bb = 82 + vy * 95
         for (let x = 0; x < w; x++) {
           let u = (x / w) * aspect
           let v = vy
@@ -325,9 +325,9 @@ function createCPU(canvas, small) {
           c /= 5
           c = 1.17 - Math.pow(c, 1.4)
           const k = Math.min(1, Math.pow(Math.abs(c), 8))
-          let rr = br + k * 150
-          let gg = bg + k * 215
-          let b2 = bb + k * 200
+          let rr = br + k * 95
+          let gg = bg + k * 245
+          let b2 = bb + k * 235
 
           if (splashing) {
             const nx = -gx * 0.0105
