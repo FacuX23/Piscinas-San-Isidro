@@ -19,7 +19,6 @@ export default function App() {
     <>
       <SmoothScroll />
       <Nav />
-      {/* Marco de la página: padding alrededor y secciones con bordes de 20px */}
       <main className="flex flex-col gap-3 p-3">
         <Hero />
         <Marquee items={MARQUEE_ITEMS} />
