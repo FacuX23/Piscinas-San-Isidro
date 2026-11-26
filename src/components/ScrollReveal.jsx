@@ -5,7 +5,7 @@ function Word({ children, progress, range }) {
   const opacity = useTransform(progress, range, [0.15, 1])
   const blur = useTransform(progress, range, ['blur(4px)', 'blur(0px)'])
   return (
-    <motion.span style={{ opacity, filter: blur }} className="mr-[0.25em] inline-block">
+    <motion.span style={{ opacity, filter: blur }} className="inline-block">
       {children}
     </motion.span>
   )
@@ -26,9 +26,12 @@ export default function ScrollReveal({ text, className = '' }) {
         const start = i / words.length
         const end = start + 1 / words.length
         return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
-            {w}
-          </Word>
+          <span key={i}>
+            <Word progress={scrollYProgress} range={[start, end]}>
+              {w}
+            </Word>
+            {i < words.length - 1 ? ' ' : null}
+          </span>
         )
       })}
     </p>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sanisidropiscinas.com.ar/sitemap.xml

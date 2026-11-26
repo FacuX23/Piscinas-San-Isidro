@@ -1,0 +1,23 @@
+{
+  "name": "San Isidro Piscinas",
+  "short_name": "SI Piscinas",
+  "description": "Diseño, construcción, reforma y mantenimiento de piletas en Zona Norte.",
+  "lang": "es-AR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#062B3A",
+  "theme_color": "#062B3A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -5,10 +5,11 @@ export default function CountUp({ to, suffix = '', prefix = '', duration = 2.2, 
   const ref = useRef(null)
   const reduce = useReducedMotion()
   const inView = useInView(ref, { once: true, margin: '0px 0px -10% 0px' })
-  const [value, setValue] = useState(reduce ? to : 0)
+  const [value, setValue] = useState(to)
 
   useEffect(() => {
     if (!inView || reduce) return
+    setValue(0)
     const controls = animate(0, to, {
       duration,
       ease: [0.22, 1, 0.36, 1],

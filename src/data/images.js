@@ -5,7 +5,7 @@
 const unsplash = (id, w = 1600) => `https://unsplash.com/photos/${id}/download?w=${w}`
 
 // Fotos propias (Vite las procesa y les pone hash al compilar)
-import mantenimiento from './servicios_piscina.png'
+import mantenimiento from './servicios_piscina.jpg'
 import construccion from './servicios_construccion.jpg'
 import reformas from './servicios_reformas.jpg'
 import procesoVisita from './proceso_visita.jpg'

@@ -6,7 +6,7 @@ import WaterHint from '../components/WaterHint'
 import SplitText from '../components/SplitText'
 import Magnet from '../components/Magnet'
 
-const CHIPS = ['+45 años de experincia', '+450 piletas', 'Garantía de 3 años']
+const CHIPS = ['+45 años de experiencia', '+450 piletas', 'Garantía de 3 años']
 
 export default function Hero() {
   const ref = useRef(null)
@@ -21,8 +21,7 @@ export default function Hero() {
       className="relative isolate flex min-h-[calc(100svh-0.5rem)] flex-col justify-end overflow-clip rounded-panel bg-profunda text-espuma "
     >
       <CausticsCanvas className="absolute inset-0 -z-20 h-full w-full" />
-<WaterHint />
-      <CausticsCanvas className="absolute inset-0 -z-20 h-full w-full" />
+      <WaterHint />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-profunda/85 via-profunda/10 to-profunda/35" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-profunda/45 to-transparent" />
 

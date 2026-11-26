@@ -27,12 +27,22 @@ export default function Footer() {
             <h2 className="font-semibold">Seguinos</h2>
             <ul className="mt-4 space-y-2 text-espuma/75">
               <li>
-                <a href={SITE.instagram} className="transition-colors hover:text-sol">
+                <a
+                  href={SITE.instagram === '#' ? '#contacto' : SITE.instagram}
+                  target={SITE.instagram === '#' ? undefined : '_blank'}
+                  rel={SITE.instagram === '#' ? undefined : 'noopener noreferrer'}
+                  className="transition-colors hover:text-sol"
+                >
                   Instagram
                 </a>
               </li>
               <li>
-                <a href={SITE.facebook} className="transition-colors hover:text-sol">
+                <a
+                  href={SITE.facebook === '#' ? '#contacto' : SITE.facebook}
+                  target={SITE.facebook === '#' ? undefined : '_blank'}
+                  rel={SITE.facebook === '#' ? undefined : 'noopener noreferrer'}
+                  className="transition-colors hover:text-sol"
+                >
                   Facebook
                 </a>
               </li>
@@ -44,13 +54,13 @@ export default function Footer() {
           <p>© {SITE.year} San Isidro Piscinas. Todos los derechos reservados.</p>
           <ul className="flex gap-5">
             <li>
-              <a href="#" className="hover:text-sol">
-                Política de privacidad
+              <a href="#contacto" className="hover:text-sol">
+                Consultas y garantías
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-sol">
-                Términos y condiciones
+              <a href="#preguntas" className="hover:text-sol">
+                Preguntas frecuentes
               </a>
             </li>
           </ul>

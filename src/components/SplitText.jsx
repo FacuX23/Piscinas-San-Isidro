@@ -45,7 +45,7 @@ export default function SplitText({
                     {word}
                   </motion.span>
                 </span>
-                {wi < arr.length - 1 ? ' ' : null}
+                {wi < arr.length - 1 || li < lines.length - 1 ? ' ' : null}
               </span>
             )
           })}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { Plus } from 'lucide-react'
 import Panel from '../components/Panel'
 import SplitText from '../components/SplitText'
@@ -52,20 +52,16 @@ export default function Faq() {
                     </motion.span>
                   </button>
                 </h3>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      id={`faq-${i}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="max-w-2xl pb-6 text-lg leading-relaxed text-profunda/70">{f.a}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <motion.div
+                  id={`faq-${i}`}
+                  aria-hidden={!isOpen}
+                  initial={false}
+                  animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden"
+                >
+                  <p className="max-w-2xl pb-6 text-lg leading-relaxed text-profunda/70">{f.a}</p>
+                </motion.div>
               </li>
             )
           })}

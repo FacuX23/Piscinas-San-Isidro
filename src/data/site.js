@@ -6,12 +6,34 @@
 
 export const SITE = {
   name: 'San Isidro Piscinas',
+  // Dominio final sin barra al final. Al cambiarlo y correr `npm run build`, se actualizan solos
+  // canonical, Open Graph, Schema JSON-LD, robots.txt y sitemap.xml.
+  url: 'https://sanisidropiscinas.com.ar',
   whatsapp: '5491155550123', // formato internacional, sin + ni espacios
   whatsappLabel: '+54 9 11 5555-0123',
   phone: '+5412345678910',
   phoneLabel: '+54 12 3456-7890',
   email: 'hola@correo-contacto.com.ar',
   address: 'Av. Centenario 1234, San Isidro, Buenos Aires',
+  streetAddress: 'Av. Centenario 1234',
+  locality: 'San Isidro',
+  region: 'Provincia de Buenos Aires',
+  postalCode: 'B1642',
+  country: 'AR',
+  geo: { latitude: -34.4708, longitude: -58.5286 },
+  areasServed: [
+    'San Isidro',
+    'Martínez',
+    'Acassuso',
+    'Beccar',
+    'Vicente López',
+    'Olivos',
+    'Tigre',
+    'Nordelta',
+    'San Fernando',
+    'Pilar',
+    'Escobar',
+  ],
   hours: ['Lunes a viernes de 9 a 18', 'Sábados de 9 a 13'],
   mapQuery: 'San Isidro, Buenos Aires, Argentina',
   instagram: '#',

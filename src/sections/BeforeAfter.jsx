@@ -5,7 +5,7 @@ import Panel from '../components/Panel'
 import SplitText from '../components/SplitText'
 import Img from '../components/Img'
 import { photos } from '../data/images'
-import piscinaBefore from '../data/piscina-before.png'
+import piscinaBefore from '../data/piscina-before.jpg'
 
 // Comparador antes / después.
 const AFTER = photos.house
