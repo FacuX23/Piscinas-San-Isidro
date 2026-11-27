@@ -22,7 +22,7 @@ export default function WaterHint() {
 
   useAnimationFrame((time) => {
     if (reduce || !inView || window.innerWidth < 768) return
-    const s = (time / 1000) * 1.35 // subí o bajá este número para flotar más rápido o más lento
+    const s = (time / 1000) * 1 // subí o bajá este número para flotar más rápido o más lento
     x.set(Math.sin(s * 0.55) * 34 + Math.sin(s * 0.91 + 1.7) * 18 + Math.sin(s * 0.23 + 4) * 12)
     y.set(Math.sin(s * 0.47 + 0.6) * 26 + Math.sin(s * 0.83 + 2.2) * 14 + Math.sin(s * 0.31) * 10 + Math.sin(s * 1.9) * 3)
     rotate.set(Math.sin(s * 0.42 + 1) * 3.5 + Math.sin(s * 0.77) * 1.5)
